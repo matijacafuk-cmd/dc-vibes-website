@@ -1,67 +1,209 @@
+
+const phone = "+385993421568";
+const email = "matijacafuk@gmail.com";
+const whatsappMessage = encodeURIComponent(
+  "Pozdrav! Zanima me ponuda za DJ nastup i opremu."
+);
+
+const services = [
+  {
+    number: "01",
+    title: "DJ NASTUPI",
+    description:
+      "Glazba prilagođena publici, atmosferi i vrsti događaja. Od elegantnog početka do punog plesnog podija.",
+  },
+  {
+    number: "02",
+    title: "PROFESIONALNI RAZGLAS",
+    description:
+      "Kvalitetan i snažan zvuk prilagođen veličini prostora i broju gostiju.",
+  },
+  {
+    number: "03",
+    title: "RASVJETA I EFEKTI",
+    description:
+      "Dinamična rasvjeta, svjetlosni efekti i atmosfera koja pretvara prostor u pravi party.",
+  },
+];
+
+const events = [
+  "Rođendani i obljetnice",
+  "Privatne proslave",
+  "Vjenčanja",
+  "Poslovni eventi",
+  "Proslave i zabave",
+  "Posebni događaji",
+];
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <header className="flex items-center justify-between border-b border-yellow-700/40 px-6 py-6">
-        <h1 className="text-2xl font-black tracking-widest text-yellow-500">
-          DC VIBES
-        </h1>
-        <a href="#kontakt" className="text-sm text-yellow-400">
-          REZERVACIJE
-        </a>
+    <main className="min-h-screen bg-[#080808] text-white">
+      <header className="sticky top-0 z-50 border-b border-[#c9a45c]/20 bg-[#080808]/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5">
+          <a href="#" className="text-2xl font-black tracking-[0.18em]">
+            DC <span className="text-[#d5ad63]">VIBES</span>
+          </a>
+          <nav className="hidden gap-8 text-xs font-semibold tracking-widest text-gray-300 md:flex">
+            <a href="#usluge">USLUGE</a>
+            <a href="#dogadaji">DOGAĐAJI</a>
+            <a href="#kontakt">KONTAKT</a>
+          </nav>
+          <a
+            href={`https://wa.me/${phone.replace("+", "")}?text=${whatsappMessage}`}
+            className="rounded-full border border-[#d5ad63] px-4 py-2 text-xs font-bold text-[#d5ad63]"
+          >
+            REZERVIRAJ
+          </a>
+        </div>
       </header>
 
-      <section className="flex min-h-[75vh] flex-col items-center justify-center px-6 text-center">
-        <p className="mb-5 tracking-[0.4em] text-yellow-500">
-          DJ • SOUND • LIGHTS
-        </p>
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div className="absolute -right-40 -top-20 h-96 w-96 rounded-full bg-[#bd8e3c]/10 blur-[100px]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 md:grid-cols-2 md:py-40">
+          <div>
+            <p className="mb-6 text-xs font-bold tracking-[0.4em] text-[#d5ad63]">
+              DJ • SOUND • LIGHTS
+            </p>
+            <h1 className="text-6xl font-black leading-[0.95] tracking-tight md:text-8xl">
+              YOUR EVENT.
+              <br />
+              <span className="text-[#d5ad63]">YOUR VIBE.</span>
+            </h1>
+            <p className="mt-8 max-w-lg text-lg leading-8 text-gray-400">
+              Vrhunska glazba, profesionalni razglas i rasvjeta.
+              Stvaramo atmosferu koju će tvoji gosti pamtiti.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href={`https://wa.me/${phone.replace("+", "")}?text=${whatsappMessage}`}
+                className="rounded-full bg-[#d5ad63] px-7 py-4 text-sm font-black text-black transition hover:bg-white"
+              >
+                ZATRAŽI PONUDU ↗
+              </a>
+              <a
+                href="#usluge"
+                className="rounded-full border border-white/20 px-7 py-4 text-sm font-bold"
+              >
+                NAŠE USLUGE
+              </a>
+            </div>
+          </div>
+          <div className="relative flex min-h-72 items-center justify-center rounded-3xl border border-[#d5ad63]/30 bg-gradient-to-br from-[#292116] via-[#111] to-black p-8">
+            <div className="absolute inset-5 rounded-2xl border border-[#d5ad63]/10" />
+            <div className="text-center">
+              <div className="text-7xl font-black tracking-widest text-[#d5ad63] md:text-8xl">
+                DC
+              </div>
+              <div className="mt-3 text-xl font-bold tracking-[0.45em]">
+                VIBES
+              </div>
+              <div className="mt-5 text-xs tracking-[0.35em] text-gray-400">
+                MAKE IT MEMORABLE
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <h2 className="text-5xl font-black md:text-7xl">
-          MAKE YOUR
-          <span className="block text-yellow-500">EVENT</span>
-          UNFORGETTABLE
+      <section id="usluge" className="mx-auto max-w-7xl px-6 py-24">
+        <p className="text-xs font-bold tracking-[0.35em] text-[#d5ad63]">
+          ŠTO NUDIMO
+        </p>
+        <h2 className="mt-4 text-4xl font-black md:text-5xl">
+          SVE ZA SAVRŠEN EVENT.
         </h2>
-
-        <p className="mt-8 max-w-xl text-lg text-gray-400">
-          Profesionalna DJ glazba, razglas, rasvjeta i
-          posebni efekti za vaše nezaboravne događaje.
-        </p>
-
-        <a href="#kontakt"
-          className="mt-10 rounded border border-yellow-500 px-10 py-4 font-bold text-yellow-400 hover:bg-yellow-500 hover:text-black">
-          ZATRAŽI PONUDU
-        </a>
-      </section>
-
-      <section className="grid gap-8 bg-zinc-950 px-8 py-20 text-center md:grid-cols-3">
-        <div>
-          <h3 className="text-xl font-bold text-yellow-500">DJ NASTUPI</h3>
-          <p className="mt-3 text-gray-400">Glazba za svaki tip događaja.</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-yellow-500">PRO RAZGLAS</h3>
-          <p className="mt-3 text-gray-400">Kvalitetan i snažan zvuk.</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-yellow-500">RASVJETA</h3>
-          <p className="mt-3 text-gray-400">Svjetlosni efekti i atmosfera.</p>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {services.map((service) => (
+            <article
+              key={service.number}
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-[#d5ad63]/60"
+            >
+              <p className="text-sm font-bold text-[#d5ad63]">
+                {service.number}
+              </p>
+              <h3 className="mt-8 text-xl font-black">{service.title}</h3>
+              <p className="mt-5 leading-7 text-gray-400">
+                {service.description}
+              </p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section id="kontakt" className="px-6 py-20 text-center">
-        <h2 className="text-3xl font-bold text-yellow-500">
-          REZERVIRAJ SVOJ TERMIN
-        </h2>
-        <p className="mt-5 text-gray-400">
-          Rođendani • Godišnjice • Vjenčanja • Korporativni eventi
-        </p>
-        <a href="mailto:matijacafuk@gmail.com"
-          className="mt-8 inline-block border border-yellow-500 px-8 py-4 text-yellow-400">
-          KONTAKTIRAJ NAS
-        </a>
+      <section id="dogadaji" className="border-y border-white/10 bg-[#101010]">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <p className="text-xs font-bold tracking-[0.35em] text-[#d5ad63]">
+            ZA SVAKU PRILIKU
+          </p>
+          <h2 className="mt-4 text-4xl font-black md:text-5xl">
+            TVOJ DOGAĐAJ. NAŠA ENERGIJA.
+          </h2>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {events.map((event) => (
+              <div
+                key={event}
+                className="border-b border-[#d5ad63]/30 py-5 text-lg font-semibold"
+              >
+                <span className="mr-3 text-[#d5ad63]">✦</span>
+                {event}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <footer className="border-t border-zinc-800 py-8 text-center text-sm text-gray-500">
-        © 2026 DC VIBES. Sva prava pridržana.
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="rounded-3xl border border-[#d5ad63]/30 bg-gradient-to-br from-[#211b10] to-[#0b0b0b] p-8 md:p-14">
+          <p className="text-xs font-bold tracking-[0.35em] text-[#d5ad63]">
+            GDJE RADIMO
+          </p>
+          <h2 className="mt-5 text-4xl font-black">VARAŽDIN I OKOLICA.</h2>
+          <p className="mt-5 max-w-2xl leading-8 text-gray-300">
+            Primarno djelujemo na području Varaždina i okolice.
+            Za događaje u drugim dijelovima Hrvatske moguć je dogovor.
+            Javite nam se i zajedno ćemo pronaći najbolje rješenje.
+          </p>
+        </div>
+      </section>
+
+      <section id="kontakt" className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-24 text-center">
+          <p className="text-xs font-bold tracking-[0.35em] text-[#d5ad63]">
+            REZERVIRAJ SVOJ TERMIN
+          </p>
+          <h2 className="mt-5 text-5xl font-black md:text-7xl">
+            LET'S MAKE
+            <br />
+            <span className="text-[#d5ad63]">SOME NOISE.</span>
+          </h2>
+          <p className="mx-auto mt-7 max-w-xl leading-7 text-gray-400">
+            Planiraš proslavu ili poseban događaj? Pošalji nam upit
+            i zatraži ponudu prilagođenu svojim željama.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a
+              href={`https://wa.me/${phone.replace("+", "")}?text=${whatsappMessage}`}
+              className="rounded-full bg-[#d5ad63] px-8 py-4 font-black text-black"
+            >
+              WHATSAPP UPIT ↗
+            </a>
+            <a
+              href={`tel:${phone}`}
+              className="rounded-full border border-white/30 px-8 py-4 font-bold"
+            >
+              NAZOVI NAS
+            </a>
+          </div>
+          <div className="mt-12 space-y-3 text-sm text-gray-400">
+            <p>099 342 1568</p>
+            <p>{email}</p>
+            <p>Varaždin, Hrvatska</p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10 px-6 py-8 text-center text-xs tracking-widest text-gray-500">
+        © {new Date().getFullYear()} DC VIBES · DJ · SOUND · LIGHTS
       </footer>
     </main>
   );
