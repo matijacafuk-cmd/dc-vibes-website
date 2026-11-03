@@ -276,6 +276,11 @@ export default function Home() {
 
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs tracking-widest text-gray-500">
         © {new Date().getFullYear()} DC VIBES · DJ · SOUND · LIGHTS
+        <p className="mt-3 text-sm text-gray-400">
+  <a href="/privatnost" className="hover:text-[#d5ad63]">
+    Politika privatnosti
+  </a>
+</p>
       </footer>
     </main>
   );
