@@ -281,6 +281,11 @@ export default function Home() {
     Politika privatnosti
   </a>
 </p>
+       <p className="mt-3 text-sm text-gray-400">
+  <a href="/prigovori" className="hover:text-[#d5ad63]">
+    Pisani prigovori potrošača
+  </a>
+</p> 
       </footer>
     </main>
   );
