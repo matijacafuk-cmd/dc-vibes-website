@@ -240,6 +240,38 @@ export default function Home() {
             <p>Varaždin, Hrvatska</p>
           </div>
         </div>
+        <div className="mt-12 rounded-2xl border border-[#d5ad63]/30 bg-[#111] p-6 text-left">
+  <h3 className="mb-6 text-2xl font-bold text-[#d5ad63]">
+    POŠALJI UPIT ZA EVENT
+  </h3>
+
+  <form action="https://formsubmit.app/f/n4gnk95fp2" method="POST" className="space-y-4">
+    <input type="text" name="name" placeholder="Ime i prezime" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
+    <input type="email" name="email" placeholder="E-mail adresa" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
+    <input type="tel" name="phone" placeholder="Telefon" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
+    <input type="date" name="datum" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
+
+    <select name="event_type" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white">
+      <option value="">Vrsta događaja</option>
+      <option>Rođendan</option>
+      <option>Godišnjica</option>
+      <option>Maturalna zabava</option>
+      <option>Privatna zabava</option>
+      <option>Poslovni event</option>
+      <option>Festival / javni događaj</option>
+      <option>Ostalo</option>
+    </select>
+
+    <input type="text" name="location" placeholder="Lokacija događaja" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
+    <textarea name="details" placeholder="Poruka i posebni zahtjevi" rows={4} className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
+
+    <input type="text" name="_gotcha" className="hidden" />
+
+    <button type="submit" className="w-full rounded-full bg-[#d5ad63] p-4 font-bold text-black">
+      POŠALJI UPIT
+    </button>
+  </form>
+</div>
       </section>
 
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs tracking-widest text-gray-500">
