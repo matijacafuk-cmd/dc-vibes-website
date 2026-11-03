@@ -166,6 +166,46 @@ export default function Home() {
         </div>
       </section>
 
+<section id="galerija" className="mx-auto max-w-7xl px-6 py-24">
+  <p className="text-xs font-bold tracking-[0.35em] text-[#d5ad63]">
+    DC VIBES U AKCIJI
+  </p>
+  <h2 className="mt-4 text-4xl font-black md:text-5xl">
+    NAŠA GALERIJA.
+  </h2>
+  <p className="mt-5 max-w-xl leading-7 text-gray-400">
+    Pogledajte našu DJ opremu, rasvjetu i atmosferu s evenata.
+  </p>
+
+  <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {[
+      ["01-dj-nastup.jpg", "DJ nastup uživo"],
+      ["02-dc-vibes-pult.jpg", "DC VIBES DJ pult"],
+      ["03-razglas-i-rasvjeta.jpg", "Razglas i rasvjeta"],
+      ["04-dj-booth-live.jpg", "DJ booth na eventu"],
+      ["05-dj-konzola-party.jpg", "DJ oprema i party atmosfera"],
+      ["06-vanjski-event.jpg", "Vanjski event"],
+      ["07-high-vibes-event.jpg", "High Vibes event"],
+      ["08-pioneer-xdj-az.jpg", "Pioneer XDJ-AZ"],
+    ].map(([file, caption]) => (
+      <div
+        key={file}
+        className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+      >
+        <img
+          src={`/gallery/${file}`}
+          alt={caption}
+          loading="lazy"
+          className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+        <p className="p-4 text-sm font-bold text-[#d5ad63]">
+          {caption}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
+
       <section id="kontakt" className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-24 text-center">
           <p className="text-xs font-bold tracking-[0.35em] text-[#d5ad63]">
