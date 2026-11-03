@@ -246,7 +246,7 @@ export default function Home() {
   </h3>
 
   <form action="https://formsubmit.app/f/n4gnk95fp2" method="POST" className="space-y-4">
-    <input type="text" name="name" placeholder="Ime i prezime" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
+    <input type="hidden" name="_redirect" value="https://dcvibes.hr/hvala" /><input type="text" name="name" placeholder="Ime i prezime" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
     <input type="email" name="email" placeholder="E-mail adresa" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
     <input type="tel" name="phone" placeholder="Telefon" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
     <input type="date" name="datum" required className="w-full rounded-xl border border-white/20 bg-black p-4 text-white" />
