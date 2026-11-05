@@ -1,5 +1,7 @@
 
-const phone = "+385993421568";
+"use client";
+
+import { useEffect, useRef, useState } from "react";const phone = "+385993421568";
 const email = "matijacafuk@gmail.com";
 const whatsappMessage = encodeURIComponent(
   "Pozdrav! Zanima me ponuda za DJ nastup i opremu."
@@ -36,6 +38,21 @@ const events = [
 ];
 
 export default function Home() {
+   const tracks = [
+    { title: "Feel the Rhythm", src: "/feel-the-rhythm.mp3" },
+    { title: "Ozira", src: "/ozira-original-mix.mp3" },
+    { title: "Magic Jackie", src: "/magic-jackie.mp3" },
+    { title: "Sunshine", src: "/sunshine-original-mix.mp3" },
+    { title: "Swing Footsteps", src: "/swing-footsteps.mp3" },
+    { title: "La Musica", src: "/la-musica.mp3" },
+  ];
+
+  const [currentTrack, setCurrentTrack] = useState(0);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    audioRef.current?.play().catch(() => {});
+  }, [currentTrack]);
   return (
     <main className="min-h-screen bg-[#080808] text-white">
       <header className="sticky top-0 z-50 border-b border-[#c9a45c]/20 bg-[#080808]/95 backdrop-blur">
@@ -281,15 +298,47 @@ export default function Home() {
     <p className="mb-5 text-gray-400">
       Feel the rhythm. Live the moment.
     </p>
-    <img
-  src="/house-music-cover.png"
-  alt="Del Capo & Allaris - House Music"
-  className="w-full max-w-md mx-auto mb-6 rounded-xl border border-yellow-500/30"
-/>
-    <audio controls preload="none" className="mx-auto w-full max-w-md">
-      <source src="/feel-the-rhythm.mp3" type="audio/mpeg" />
-      Tvoj preglednik ne podržava audio reprodukciju.
-    </audio>
+    <div className="w-full max-w-lg mx-auto">
+  <img
+    src="/house-music-cover.png"
+    alt="DC VIBES Music"
+    className="w-full rounded-xl mb-5"
+  />
+
+  <audio
+    ref={audioRef}
+    key={currentTrack}
+    src={tracks[currentTrack].src}
+    controls
+    autoPlay
+    preload="auto"
+    className="w-full"
+    onEnded={() =>
+      setCurrentTrack((currentTrack + 1) % tracks.length)
+    }
+  />
+
+  <p className="text-white text-center mt-4 font-semibold">
+    {tracks[currentTrack].title}
+  </p>
+
+  <div className="mt-4 space-y-2">
+    {tracks.map((track, index) => (
+      <button
+        key={track.src}
+        onClick={() => setCurrentTrack(index)}
+        className={`w-full text-left p-3 rounded-lg border ${
+          currentTrack === index
+            ? "border-yellow-500 text-yellow-400"
+            : "border-gray-700 text-white"
+        }`}
+      >
+        {index === currentTrack ? "▶ " : "♪ "}
+        {track.title}
+      </button>
+    ))}
+  </div>
+</div>
   </div>
 </section>
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs tracking-widest text-gray-500">
