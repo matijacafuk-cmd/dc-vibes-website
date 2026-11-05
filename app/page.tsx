@@ -273,7 +273,20 @@ export default function Home() {
   </form>
 </div>
       </section>
-
+<section className="mx-auto max-w-5xl px-6 py-12">
+  <div className="rounded-2xl border border-yellow-500/30 bg-zinc-900 p-6 text-center">
+    <h2 className="mb-2 text-2xl font-bold text-yellow-400">
+      DC VIBES MUSIC
+    </h2>
+    <p className="mb-5 text-gray-400">
+      Feel the rhythm. Live the moment.
+    </p>
+    <audio controls preload="none" className="mx-auto w-full max-w-md">
+      <source src="/feel-the-rhythm.mp3" type="audio/mpeg" />
+      Tvoj preglednik ne podržava audio reprodukciju.
+    </audio>
+  </div>
+</section>
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs tracking-widest text-gray-500">
         © {new Date().getFullYear()} DC VIBES · DJ · SOUND · LIGHTS
         <p className="mt-3 text-sm text-gray-400">
