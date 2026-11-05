@@ -281,6 +281,11 @@ export default function Home() {
     <p className="mb-5 text-gray-400">
       Feel the rhythm. Live the moment.
     </p>
+    <img
+  src="/house-music-cover.png"
+  alt="Del Capo & Allaris - House Music"
+  className="w-full max-w-md mx-auto mb-6 rounded-xl border border-yellow-500/30"
+/>
     <audio controls preload="none" className="mx-auto w-full max-w-md">
       <source src="/feel-the-rhythm.mp3" type="audio/mpeg" />
       Tvoj preglednik ne podržava audio reprodukciju.
